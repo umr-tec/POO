@@ -136,5 +136,34 @@ namespace POOU2D_Ejemplo1_
             }
             return valorDeRetorno;
         }
+
+        public double CalcularInscripcion(double promedio) {
+
+            double valorDeRetorno = 0;//97
+
+            if (promedio > 100)
+            {
+                valorDeRetorno = 0;
+            }
+            else
+            {
+
+                if (promedio >= 95 && promedio <= 100)
+                {
+                    valorDeRetorno = 2700 - 2000;
+                    //  return;
+                }
+                if (promedio >= 80 && promedio <= 94)
+                {
+                    valorDeRetorno = 2700 - 1000;
+                }
+                if (promedio <= 79)
+                {
+                    valorDeRetorno = 2700;
+                }
+            }            
+            return valorDeRetorno;
+        }
+
     }
 }

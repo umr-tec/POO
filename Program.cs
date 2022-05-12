@@ -64,13 +64,17 @@ namespace POOU2D_Ejemplo1_
 
 
             // 2. Mandar llamar algun miembro                     
-            Console.WriteLine(alumno2.CalcularEdadAlumno1());
-            Console.WriteLine(alumno3.CalcularEdadAlumno1());
-            Console.WriteLine(alumno4.CalcularEdadAlumno1());
-            Console.WriteLine(alumno5.CalcularEdadAlumno1());
-            Console.WriteLine(alumno6.CalcularEdadAlumno1());
-            Console.WriteLine(alumno1.CalcularEdadAlumno1());
-            Console.WriteLine(alumno12.CalcularEdadAlumno1());
+            //Console.WriteLine(alumno2.CalcularEdadAlumno1());
+            //Console.WriteLine(alumno3.CalcularEdadAlumno1());
+            //Console.WriteLine(alumno4.CalcularEdadAlumno1());
+            //Console.WriteLine(alumno5.CalcularEdadAlumno1());
+            //Console.WriteLine(alumno6.CalcularEdadAlumno1());
+            //Console.WriteLine(alumno1.CalcularEdadAlumno1());
+            //Console.WriteLine(alumno12.CalcularEdadAlumno1());
+
+            Console.WriteLine(alumno1.CalcularInscripcion(97));
+            alumno1.CalcularInscripcion(97);
+
 
             Console.ReadKey();
         }
