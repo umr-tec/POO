@@ -72,9 +72,19 @@ namespace POOU2D_Ejemplo1_
             //Console.WriteLine(alumno1.CalcularEdadAlumno1());
             //Console.WriteLine(alumno12.CalcularEdadAlumno1());
 
-            Console.WriteLine(alumno1.CalcularInscripcion(97));
-            alumno1.CalcularInscripcion(97);
+           
 
+            if (alumno1.CalcularInscripcion(97) == 0)
+            {
+                Console.WriteLine("Lo sentimos pero su promedio es menor al valor acpetado");
+            }
+            else
+            {
+                Console.WriteLine(alumno1.CalcularInscripcion(97));
+            }
+
+            //Implementar el metodo Danuela
+            Console.WriteLine( alumno2.InformacionDePago(90));
 
             Console.ReadKey();
         }

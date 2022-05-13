@@ -140,7 +140,6 @@ namespace POOU2D_Ejemplo1_
         public double CalcularInscripcion(double promedio) {
 
             double valorDeRetorno = 0;//97
-
             if (promedio > 100)
             {
                 valorDeRetorno = 0;
@@ -157,13 +156,105 @@ namespace POOU2D_Ejemplo1_
                 {
                     valorDeRetorno = 2700 - 1000;
                 }
-                if (promedio <= 79)
+                if (promedio >= 70 && promedio <= 79)
                 {
                     valorDeRetorno = 2700;
+                }
+                if (promedio < 70)
+                {
+                    valorDeRetorno = 0;
                 }
             }            
             return valorDeRetorno;
         }
+
+        //Metodo DAniela
+        public double CalcularInscripcion1(double promedio)
+        {
+
+            double valorDeRetorno = 0;//97
+            if (promedio > 100)
+            {
+                valorDeRetorno = 0;
+            }
+            else
+            {
+
+                if (promedio >= 95 && promedio <= 100)
+                {
+                    valorDeRetorno = 2700 - 2000;
+                    //  return;
+                }
+                if (promedio >= 80 && promedio <= 94)
+                {
+                    valorDeRetorno = 2700 - 1000;
+                }
+                if (promedio >= 70 && promedio <= 79)
+                {
+                    valorDeRetorno = 2700;
+                }
+                if (promedio < 70)
+                {
+                    Console.WriteLine("Promedio no admitido");
+                    valorDeRetorno = 0;
+                    
+                }
+            }
+            return valorDeRetorno;
+        }
+
+        public double CalcularInscripcionAlfonso(double promedio)
+        {
+
+            double valorDeRetorno = 0;//97
+
+            if (promedio < 70)
+            {
+                Console.WriteLine("Promedio no admitido");
+                valorDeRetorno = 0;
+            }
+            if (promedio > 100)
+            {
+                valorDeRetorno = 0;
+            }
+            else
+            {
+
+                if (promedio >= 95 && promedio <= 100)
+                {
+                    valorDeRetorno = 2700 - 2000;
+                    //  return;
+                }
+                if (promedio >= 80 && promedio <= 94)
+                {
+                    valorDeRetorno = 2700 - 1000;
+                }
+                if (promedio >= 70 && promedio <= 79)
+                {
+                    valorDeRetorno = 2700;
+                }
+                if (promedio < 70)
+                {
+                    Console.WriteLine("Promedio no admitido");
+                    valorDeRetorno = 0;
+
+                }
+            }
+            return valorDeRetorno;
+        }
+
+        //Metodo para mostrar informacion de pago 
+        public string InformacionDePago(int promedio) {
+
+            string valorDeRetorno;
+           // valorDeRetorno = "Matricula:" +" "+ matricula + " \n " + "Alumno: " +" "+   nombreAlumno +" "+ apellidoPrimero;
+            valorDeRetorno = string.Format("Matricula: {0} \n Alumno: {1} {2}. \n" +
+                "Total a pagar: ${3}", 
+                matricula, nombreAlumno, apellidoPrimero, CalcularInscripcion1(promedio));          
+
+            return valorDeRetorno;
+        }
+
 
     }
 }
