@@ -81,16 +81,22 @@ namespace POOU2D_Ejemplo1_
                 //Instanciar la clase Alumno
                 string nombre, apleiido1, aplelido2;
                 DateTime fechaNacimiento, fechaEntrada;
-
-                Console.Write("Ingresa el nombre del Alumno");
+                
+                Console.Write("Ingresa el nombre del Alumno \n");
                 nombre = Console.ReadLine();
-                Console.Write("Ingresa el primer apelldo del Alumno");
+                Console.Write("Ingresa el primer apelldo del Alumno \n");
                 apleiido1 = Console.ReadLine();
-                Console.Write("Ingresa el segundo apelldo del Alumno");
+                Console.Write("Ingresa el segundo apelldo del Alumno \n");
                 aplelido2 = Console.ReadLine();
-                Console.Write("Ingresa la fecha de nacimiento del Alumno");
+                Console.Write("Ingresa la fecha de nacimiento del Alumno \n");
                 fechaNacimiento = Convert.ToDateTime( Console.ReadLine());
 
+                //Instanciar un objeto
+                Alumno alumno1 = new Alumno(nombre, apleiido1, aplelido2, DateTime.Now, fechaNacimiento);
+                Console.WriteLine( alumno1.InformacionDePago(97));
+
+                Console.WriteLine("Opciones: \n \t 1. Inscribir usuarios. \n \t 2. Salir");
+                opcion = int.Parse(Console.ReadLine());
             }
 
             Console.ReadKey();
