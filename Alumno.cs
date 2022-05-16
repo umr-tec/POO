@@ -14,6 +14,7 @@ namespace POOU2D_Ejemplo1_
         private string matricula, nombreAlumno = string.Empty, apellidoPrimero, apellidoSegundo, domicilioAlumno, carrera;
         string curpAlumno, nombreInstitucion, contrasenaAlumno, grupoAlumno;
         DateTime fechaNacimiento, fechaIncripcion;
+        double promedioGlobal;
 
         // Miembro de tipo Constante pi
         const string FECHA_CREACION_INSTITUCION = "01-08-2008", NUMERO_TECNOLOGICO = "100";
@@ -50,7 +51,40 @@ namespace POOU2D_Ejemplo1_
 
             Folio.numeroFolio = Folio.numeroFolio + 1;
         }
-      
+
+        public Alumno(string nombreAlumnoEntrada, string apellidoPrimeroEntrada, string apellidoSegundoEntrada,
+           DateTime fechaIncripcionEntrada, DateTime fechaNacimientoEntrada /*Los valores de entrada*/)
+        {  // Explicitas | Implicitas
+            nombreAlumno = nombreAlumnoEntrada;
+            apellidoPrimero = apellidoPrimeroEntrada;
+            apellidoSegundo = apellidoSegundoEntrada;
+            fechaIncripcion = fechaIncripcionEntrada;
+            fechaNacimiento = fechaNacimientoEntrada;
+            //construir la matricula
+
+            if (Folio.numeroFolio >= 1 && Folio.numeroFolio <= 9)
+            {
+                matricula = (fechaIncripcion.Year + "" + NUMERO_TECNOLOGICO).Substring(2, 5) + "000" + Folio.numeroFolio;
+            }
+            if (Folio.numeroFolio >= 10 && Folio.numeroFolio <= 99)
+            {
+                matricula = (fechaIncripcion.Year + "" + NUMERO_TECNOLOGICO).Substring(2, 5) + "00" + Folio.numeroFolio;
+            }
+            if (Folio.numeroFolio >= 100 && Folio.numeroFolio <= 999)
+            {
+                matricula = (fechaIncripcion.Year + "" + NUMERO_TECNOLOGICO).Substring(2, 5) + "0" + Folio.numeroFolio;
+            }
+            if (Folio.numeroFolio >= 1000 && Folio.numeroFolio <= 9999)
+            {
+                matricula = (fechaIncripcion.Year + "" + NUMERO_TECNOLOGICO).Substring(2, 5) + "" + Folio.numeroFolio;
+            }
+
+
+            Folio.numeroFolio = Folio.numeroFolio + 1;
+        }
+
+        public Alumno() { }
+
         // Miembros de tipo Propiedad (proteger algun campo)
         public string NombreAlumno
         {
@@ -171,7 +205,7 @@ namespace POOU2D_Ejemplo1_
         //Metodo DAniela
         public double CalcularInscripcion1(double promedio)
         {
-
+            promedioGlobal = promedio;
             double valorDeRetorno = 0;//97
             if (promedio > 100)
             {
@@ -247,14 +281,50 @@ namespace POOU2D_Ejemplo1_
         public string InformacionDePago(int promedio) {
 
             string valorDeRetorno;
-           // valorDeRetorno = "Matricula:" +" "+ matricula + " \n " + "Alumno: " +" "+   nombreAlumno +" "+ apellidoPrimero;
-            valorDeRetorno = string.Format("Matricula: {0} \n Alumno: {1} {2}. \n" +
-                "Total a pagar: ${3}", 
-                matricula, nombreAlumno, apellidoPrimero, CalcularInscripcion1(promedio));          
+            // valorDeRetorno = "Matricula:" +" "+ matricula + " \n " + "Alumno: " +" "+   nombreAlumno +" "+ apellidoPrimero;
+
+            if (promedio >= 80)
+            {
+                valorDeRetorno = string.Format("Matricula: {0} \n Alumno: {1} {2}. \n" +
+                "Total a pagar: ${3} \n Descuento: SI",
+                matricula, nombreAlumno, apellidoPrimero, CalcularInscripcion1(promedio));
+            }
+            else
+            {
+                valorDeRetorno = string.Format("Matricula: {0} \n Alumno: {1} {2}. \n" +
+               "Total a pagar: ${3} \n Descuento: NO",
+               matricula, nombreAlumno, apellidoPrimero, CalcularInscripcion1(promedio));
+            }
 
             return valorDeRetorno;
         }
 
+        //InformacionDePago llamado nuevamente
+        public string InformacionDePago()
+        {
+            //Codigo ALfonso, Daniela, Eduardo mas los que se acomulen
+           // int promedio;
+            string valorDeRetorno;
+            // valorDeRetorno = "Matricula:" +" "+ matricula + " \n " + "Alumno: " +" "+   nombreAlumno +" "+ apellidoPrimero;
 
+            //Codigo ALfonso, Daniela, Eduardo mas los que se acomulen
+            //Console.WriteLine("Ingresa tu promedio");
+            //promedio = int.Parse(Console.ReadLine());
+
+            if (promedioGlobal >= 80)
+            {
+                valorDeRetorno = string.Format("Matricula: {0} \n Alumno: {1} {2}. \n" +
+                "Total a pagar: ${3} \n Descuento: SI",
+                matricula, nombreAlumno, apellidoPrimero, promedioGlobal);
+            }
+            else
+            {
+                valorDeRetorno = string.Format("Matricula: {0} \n Alumno: {1} {2}. \n" +
+               "Total a pagar: ${3} \n Descuento: NO",
+               matricula, nombreAlumno, apellidoPrimero, promedioGlobal);
+            }
+
+            return valorDeRetorno;
+        }
     }
 }

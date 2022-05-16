@@ -45,46 +45,53 @@ namespace POOU2D_Ejemplo1_
             //// objetoTres.FechaNacimiento = Convert.ToDateTime("13-02-1956 07:30:21");
             // Console.WriteLine(objetoTres.CalcularEdadAlumno2(Convert.ToDateTime( "13-02-2002")));
             // Console.WriteLine(objetoTres.FechaNacimiento);
-            #endregion          
+            #endregion
 
+            #region OldColdev2
             // 1. Crear un objeto (intancia)
-            Alumno alumno1 = new Alumno("Daniela Ailyn", "Rodriguez", Convert.ToDateTime("25-06-2021"), Convert.ToDateTime("25-06-2003"));
-            Alumno alumno2 = new Alumno("Amador", "Rivera", Convert.ToDateTime("25-06-2021"), Convert.ToDateTime("25-06-2002"));
-            Alumno alumno3 = new Alumno("Ezequiel", "Sandoval", Convert.ToDateTime("25-06-2021"), Convert.ToDateTime("25-06-2003"));
-            Alumno alumno4 = new Alumno("Daniela Ailyn", "Rodriguez", Convert.ToDateTime("25-06-2021"), Convert.ToDateTime("25-06-2001"));
-            Alumno alumno5 = new Alumno("Yolanda Elizabeth", "Zapata", Convert.ToDateTime("25-06-2021"), Convert.ToDateTime("25-06-2004"));
-            Alumno alumno6 = new Alumno("Sonia", "Huerta", Convert.ToDateTime("25-06-2021"), Convert.ToDateTime("25-06-2002"));
-            //
-            Alumno alumno7 = new Alumno("Daniela Ailyn", "Rodriguez", Convert.ToDateTime("25-06-2021"), Convert.ToDateTime("25-06-2003"));
-            Alumno alumno8 = new Alumno("Amador", "Rivera", Convert.ToDateTime("25-06-2021"), Convert.ToDateTime("25-06-2002"));
-            Alumno alumno9 = new Alumno("Ezequiel", "Sandoval", Convert.ToDateTime("25-06-2021"), Convert.ToDateTime("25-06-2003"));
-            Alumno alumno10 = new Alumno("Daniela Ailyn", "Rodriguez", Convert.ToDateTime("25-06-2021"), Convert.ToDateTime("25-06-2001"));
-            Alumno alumno11 = new Alumno("Yolanda Elizabeth", "Zapata", Convert.ToDateTime("25-06-2021"), Convert.ToDateTime("25-06-2004"));
-            Alumno alumno12 = new Alumno("Sonia", "Huerta", Convert.ToDateTime("25-06-2021"), Convert.ToDateTime("25-06-2002"));
+            //Alumno alumno1 = new Alumno("Daniela Ailyn", "Rodriguez", Convert.ToDateTime("25-06-2021"), Convert.ToDateTime("25-06-2003"));
+            //Alumno alumno2 = new Alumno("Amador", "Rivera", Convert.ToDateTime("25-06-2021"), Convert.ToDateTime("25-06-2002"));
+            //Alumno alumno3 = new Alumno("Ezequiel", "Sandoval", Convert.ToDateTime("25-06-2021"), Convert.ToDateTime("25-06-2003"));
+            //Alumno alumno4 = new Alumno("Daniela Ailyn", "Rodriguez", Convert.ToDateTime("25-06-2021"), Convert.ToDateTime("25-06-2001"));
+            //Alumno alumno5 = new Alumno("Yolanda Elizabeth", "Zapata", Convert.ToDateTime("25-06-2021"), Convert.ToDateTime("25-06-2004"));
+            //Alumno alumno6 = new Alumno("Sonia", "Huerta", Convert.ToDateTime("25-06-2021"), Convert.ToDateTime("25-06-2002"));
+            ////
+            //Alumno alumno7 = new Alumno();
 
+            //if (alumno1.CalcularInscripcion(97) == 0)
+            //{
+            //    Console.WriteLine("Lo sentimos pero su promedio es menor al valor acpetado");
+            //}
+            //else
+            //{
+            //    Console.WriteLine(alumno1.CalcularInscripcion1(97));
+            //}
+            ////Implementar el metodo Danuela
+            //Console.WriteLine(alumno1.InformacionDePago());
+            //Console.WriteLine(alumno2.InformacionDePago(70));
 
-            // 2. Mandar llamar algun miembro                     
-            //Console.WriteLine(alumno2.CalcularEdadAlumno1());
-            //Console.WriteLine(alumno3.CalcularEdadAlumno1());
-            //Console.WriteLine(alumno4.CalcularEdadAlumno1());
-            //Console.WriteLine(alumno5.CalcularEdadAlumno1());
-            //Console.WriteLine(alumno6.CalcularEdadAlumno1());
-            //Console.WriteLine(alumno1.CalcularEdadAlumno1());
-            //Console.WriteLine(alumno12.CalcularEdadAlumno1());
+            #endregion
+            int opcion;
+            Console.WriteLine("InscribeTEC");
+            Console.WriteLine("Opciones: \n \t 1. Inscribir usuarios. \n \t 2. Salir");
+            opcion = int.Parse(Console.ReadLine());
 
-           
-
-            if (alumno1.CalcularInscripcion(97) == 0)
+            while (opcion == 1)
             {
-                Console.WriteLine("Lo sentimos pero su promedio es menor al valor acpetado");
-            }
-            else
-            {
-                Console.WriteLine(alumno1.CalcularInscripcion(97));
-            }
+                //Instanciar la clase Alumno
+                string nombre, apleiido1, aplelido2;
+                DateTime fechaNacimiento, fechaEntrada;
 
-            //Implementar el metodo Danuela
-            Console.WriteLine( alumno2.InformacionDePago(90));
+                Console.Write("Ingresa el nombre del Alumno");
+                nombre = Console.ReadLine();
+                Console.Write("Ingresa el primer apelldo del Alumno");
+                apleiido1 = Console.ReadLine();
+                Console.Write("Ingresa el segundo apelldo del Alumno");
+                aplelido2 = Console.ReadLine();
+                Console.Write("Ingresa la fecha de nacimiento del Alumno");
+                fechaNacimiento = Convert.ToDateTime( Console.ReadLine());
+
+            }
 
             Console.ReadKey();
         }
