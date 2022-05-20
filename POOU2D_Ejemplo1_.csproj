@@ -46,6 +46,7 @@
     <Compile Include="Alumno.cs" />
     <Compile Include="Calculadora.cs" />
     <Compile Include="Folio.cs" />
+    <Compile Include="ISIC.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

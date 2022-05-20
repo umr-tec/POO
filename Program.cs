@@ -100,7 +100,7 @@ namespace POOU2D_Ejemplo1_
                     
                     "b. Calcular pago inscripción. \n" +
                     "c. Calcular Edad del alumno. \n");
-                opcionesMenu =  Console.ReadLine();
+                opcionesMenu =  Console.ReadKey();
 
                 if (opcionesMenu.Key == ConsoleKey.A)
                 {
@@ -117,6 +117,11 @@ namespace POOU2D_Ejemplo1_
                 Console.WriteLine("Opciones: \n \t 1. Inscribir usuarios. \n \t 2. Salir");
                 opcion = int.Parse(Console.ReadLine());
             }
+
+
+            //Crear objeto de la clase heredada ISIC
+            ISIC objISIC1 = new ISIC();
+
 
             Console.ReadKey();
         }
