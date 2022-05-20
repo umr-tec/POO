@@ -80,7 +80,8 @@ namespace POOU2D_Ejemplo1_
             {
                 //Instanciar la clase Alumno
                 string nombre, apleiido1, aplelido2;
-                DateTime fechaNacimiento, fechaEntrada;
+                DateTime fechaNacimiento;
+                ConsoleKeyInfo opcionesMenu;
                 
                 Console.Write("Ingresa el nombre del Alumno \n");
                 nombre = Console.ReadLine();
@@ -93,7 +94,25 @@ namespace POOU2D_Ejemplo1_
 
                 //Instanciar un objeto
                 Alumno alumno1 = new Alumno(nombre, apleiido1, aplelido2, DateTime.Now, fechaNacimiento);
-                Console.WriteLine( alumno1.InformacionDePago(97));
+                //alumno1.CalcularInscripcion1(92);
+
+                Console.WriteLine("Selecciona una se las siguientes opciones: \n a. Actualizar fecha de nacimiento. \n" +
+                    
+                    "b. Calcular pago inscripción. \n" +
+                    "c. Calcular Edad del alumno. \n");
+                opcionesMenu =  Console.ReadLine();
+
+                if (opcionesMenu.Key == ConsoleKey.A)
+                {
+                    Console.WriteLine("Ingresa la fecha de nacimiento correcta del alumno: {0}",alumno1.NombreAlumno);
+                    alumno1.FechaNacimiento = Convert.ToDateTime( Console.ReadLine());
+                }
+                if (opcionesMenu.Key == ConsoleKey.A)
+                {
+                    Console.WriteLine("Seleccionaste la opcion de calculo de pago de incstripcion del alumno: {0}", alumno1.NombreAlumno);
+                    alumno1.InformacionDePago();
+                }
+
 
                 Console.WriteLine("Opciones: \n \t 1. Inscribir usuarios. \n \t 2. Salir");
                 opcion = int.Parse(Console.ReadLine());

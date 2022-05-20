@@ -8,6 +8,7 @@ namespace POOU2D_Ejemplo1_
 {
     class Alumno
     {
+        #region Campos
         //Campos (variables)        
         //Variables Daniela
         private int numeroMateriasNoAcreditadas;
@@ -19,6 +20,9 @@ namespace POOU2D_Ejemplo1_
         // Miembro de tipo Constante pi
         const string FECHA_CREACION_INSTITUCION = "01-08-2008", NUMERO_TECNOLOGICO = "100";
 
+        #endregion
+
+        #region Contructores
         // Miembro de tipo Contructor
         /*
             Tipo de acceso  NombreClase (entrada) {}
@@ -85,6 +89,9 @@ namespace POOU2D_Ejemplo1_
 
         public Alumno() { }
 
+        #endregion
+
+        #region Propiedades
         // Miembros de tipo Propiedad (proteger algun campo)
         public string NombreAlumno
         {
@@ -109,6 +116,9 @@ namespace POOU2D_Ejemplo1_
             get { return fechaNacimiento; }
         }
 
+        #endregion
+
+        #region Métodos
 
         //Mimebro de tipo metodo
         // Tipo acceso Tipo de dato Nombre metodo (entrada){}
@@ -151,7 +161,7 @@ namespace POOU2D_Ejemplo1_
         }
 
         //Metodo con valores de entrada (dominio)
-        public string CalcularEdadAlumno2(DateTime fechaNacimientoEntrada)
+        public string CalcularEdadAlumno(DateTime fechaNacimientoEntrada)
         {
             int edad;
             string valorDeRetorno;
@@ -300,10 +310,37 @@ namespace POOU2D_Ejemplo1_
         }
 
         //InformacionDePago llamado nuevamente
-        public string InformacionDePago()
+        //public string InformacionDePago()
+        //{
+        //    //Codigo ALfonso, Daniela, Eduardo mas los que se acomulen
+        //   // int promedio;
+        //    string valorDeRetorno;
+        //    // valorDeRetorno = "Matricula:" +" "+ matricula + " \n " + "Alumno: " +" "+   nombreAlumno +" "+ apellidoPrimero;
+
+        //    //Codigo ALfonso, Daniela, Eduardo mas los que se acomulen
+        //    //Console.WriteLine("Ingresa tu promedio");
+        //    //promedio = int.Parse(Console.ReadLine());
+
+        //    if (promedioGlobal >= 80)
+        //    {
+        //        valorDeRetorno = string.Format("Matricula: {0} \n Alumno: {1} {2}. \n" +
+        //        "Total a pagar: ${3} \n Descuento: SI",
+        //        matricula, nombreAlumno, apellidoPrimero, promedioGlobal);
+        //    }
+        //    else
+        //    {
+        //        valorDeRetorno = string.Format("Matricula: {0} \n Alumno: {1} {2}. \n" +
+        //       "Total a pagar: ${3} \n Descuento: NO",
+        //       matricula, nombreAlumno, apellidoPrimero, promedioGlobal);
+        //    }
+
+        //    return valorDeRetorno;
+        //}
+
+        public void InformacionDePago()
         {
             //Codigo ALfonso, Daniela, Eduardo mas los que se acomulen
-           // int promedio;
+            // int promedio;
             string valorDeRetorno;
             // valorDeRetorno = "Matricula:" +" "+ matricula + " \n " + "Alumno: " +" "+   nombreAlumno +" "+ apellidoPrimero;
 
@@ -311,20 +348,37 @@ namespace POOU2D_Ejemplo1_
             //Console.WriteLine("Ingresa tu promedio");
             //promedio = int.Parse(Console.ReadLine());
 
-            if (promedioGlobal >= 80)
+            if (promedioGlobal == 0)
             {
+                Console.WriteLine("Ingresa el pormedio del alumno: \n");
+                promedioGlobal = int.Parse(Console.ReadLine());
+
+                
+
                 valorDeRetorno = string.Format("Matricula: {0} \n Alumno: {1} {2}. \n" +
-                "Total a pagar: ${3} \n Descuento: SI",
-                matricula, nombreAlumno, apellidoPrimero, promedioGlobal);
+               "Total a pagar: ${3} \n Descuento: SI",
+               matricula, nombreAlumno, apellidoPrimero, CalcularInscripcion1(promedioGlobal));
             }
             else
             {
-                valorDeRetorno = string.Format("Matricula: {0} \n Alumno: {1} {2}. \n" +
-               "Total a pagar: ${3} \n Descuento: NO",
-               matricula, nombreAlumno, apellidoPrimero, promedioGlobal);
+                if (promedioGlobal >= 80)
+                {
+                    valorDeRetorno = string.Format("Matricula: {0} \n Alumno: {1} {2}. \n" +
+                    "Total a pagar: ${3} \n Descuento: SI",
+                    matricula, nombreAlumno, apellidoPrimero, promedioGlobal);
+                }
+                else
+                {
+                    valorDeRetorno = string.Format("Matricula: {0} \n Alumno: {1} {2}. \n" +
+                   "Total a pagar: ${3} \n Descuento: NO",
+                   matricula, nombreAlumno, apellidoPrimero, promedioGlobal);
+                }
             }
-
-            return valorDeRetorno;
+            
+            Console.WriteLine(valorDeRetorno);
         }
+
+        #endregion
+
     }
 }
