@@ -337,8 +337,9 @@ namespace POOU2D_Ejemplo1_
         //    return valorDeRetorno;
         //}
 
-        public void InformacionDePago()
+        public virtual void InformacionDePago()
         {
+            Console.ForegroundColor = ConsoleColor.DarkRed;
             //Codigo ALfonso, Daniela, Eduardo mas los que se acomulen
             // int promedio;
             string valorDeRetorno;
