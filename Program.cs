@@ -122,10 +122,11 @@ namespace POOU2D_Ejemplo1_
 
             //Crear objeto de la clase heredada ISIC
             ISIC objISIC1 = new ISIC('D', "Ricardo Lenin", "Vazquez", DateTime.Now, Convert.ToDateTime("03-04-2003"));
-            objISIC1.InformacionDePago();
+            // objISIC1.InformacionDePago();
+            objISIC1.CalcularPromedio();
 
             ILOG objILOG = new ILOG('J', "Juan", "Vazquez", DateTime.Now, Convert.ToDateTime("03-04-2003"));
-            objILOG.InformacionDePago();
+         //   objILOG.InformacionDePago();
 
             Console.ReadKey();
         }
