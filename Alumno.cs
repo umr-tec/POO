@@ -381,15 +381,20 @@ namespace POOU2D_Ejemplo1_
 
 
         //Metodo para calcular el proemdio de una materia
-        public void CalcularPromedio() {          
+        public void CalcularPromedio() {
             //declaramos un areeglo
-            int[] calificaciones = new int[3];
+            int numeroUnidades;
+            int[] calificaciones;
             
             Console.WriteLine("Opción para calcular el promedio de una asignatura;");
             Console.WriteLine("Ingresa la materia en la que vas a ingresar las calificaciones");
             nombreMateria = Console.ReadLine();
 
-            for (int i = 0; i <= 2 ; i++)
+            Console.WriteLine("Ingresa la cantidad de unidades de la asignatura {0}.",nombreMateria);
+            numeroUnidades = Convert.ToInt32(Console.ReadLine());
+            calificaciones = new int[numeroUnidades];
+
+            for (int i = 0; i < numeroUnidades ; i++)
             {
                 Console.WriteLine("Ingresa la calificcion de la unidad número {0}",i+1);
                 calificaciones[i] = Convert.ToInt32(Console.ReadLine());
@@ -413,7 +418,7 @@ namespace POOU2D_Ejemplo1_
             //promedio = promedio / 3;
 
             Console.WriteLine("Detalles de promedio");
-            Console.WriteLine("\n Materia evaluada: {0}. \n Alumno: {1}. \n Promedio alcanzado: {2}", nombreMateria, nombreAlumno, promedio/3);
+            Console.WriteLine("\n Materia evaluada: {0}. \n Alumno: {1}. \n Promedio alcanzado: {2}", nombreMateria, nombreAlumno, promedio/numeroUnidades);
 
         }
 
